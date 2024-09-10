@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAPSM-GC & B J Medical College Ahmedabad World Health Day Quiz Competition Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            line-height: 1.6
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            transform-style: preserve-3d
+        }
+
+        .section:hover {
+            transform: translateZ(20px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3)
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(0, 198, 255, 0.3), rgba(0, 114, 255, 0.3));
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+        }
+
+        .organizers {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+
+        .organizer-card {
+            flex-basis: 48%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease
+        }
+
+        .organizer-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2)
+        }
+
+        .round-description {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease
+        }
+
+        .round-description:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2)
+        }
+
+        #roundsVisualization,
+        #audienceVisualization {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #ffffff;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0
+        }
+
+        .right {
+            left: 50%
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            position: relative;
+            border-radius: 6px
+        }
+
+        .data-visualization {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease
+        }
+
+        .data-visualization:hover {
+            transform: translateZ(30px)
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px
+        }
+
+        .data-bar {
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            height: 20px;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out
+        }
+
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            /* Center the images horizontally */
+            align-items: center;
+            /* Center the images vertically */
+        }
+
+        .image-item {
+            flex: 1;
+            /* Each image item takes equal space */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>IAPSM-GC & B J Medical College Ahmedabad</h1>
+        <h2>Health Guardian's Faceoff: The Decider - World Health Day Quiz Competition</h2>
+        <div class="section">
+            <h3>Event Overview</h3>
+            <img src="img/DIP PRAGTYA.jpg" alt="Image Description" style="width: 100%;">
+            <div class="highlight">
+                <p><strong>Date:</strong> July 2, 2024</p>
+                <p><strong>Venue:</strong> Auditorium, 1st Floor, B J Medical College, Ahmedabad</p>
+                <p><strong>Time:</strong> 10:30 AM Onwards</p>
+                <p><strong>Theme:</strong> "Health is Wealth: Celebrating World Health Day"</p>
+            </div>
+            <p><em>"स्वास्थ्यं एव धनं" - Health is our true wealth. This quiz competition not only highlights the
+                    importance of global health awareness but also pays homage to our cultural roots, recognizing that a
+                    sound mind and body are the foundation of a prosperous and fulfilling life.</em></p>
+        </div>
+        <div class="section">
+            <h3>Organizers</h3>
+            <p>Organized by IAPSM-GC (Indian Association of Preventive and Social Medicine - Gujarat Chapter) in
+                Collaboration with the Department of Community Medicine, B J Medical College, Ahmedabad</p>
+            <div class="organizers">
+                <div class="organizer-card">
+                    <h4>Dr. Atul Trivedi</h4>
+                    <p>Secretary of IAPSM-GC</p>
+                    <p>Professor at B J Medical College Ahmedabad</p>
+                </div>
+                <div class="organizer-card">
+                    <h4>Dr. Sujal Parikh</h4>
+                    <p>Coordinator from Organizing Team</p>
+                    <p>Mentor of BJMC Team</p>
+                    <p>Assistant Professor at B J Medical College Ahmedabad</p>
+                </div>
+                <img src="img/ORGANIZERS.jpg" alt="Image Description" style="width: 100%;">
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="img/STARTOVER.jpg" alt="Image 1" style="width: 100%;">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/ENTRY.jpg" alt="Image 2" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Competition Structure</h3>
+            <p>7 Rounds, 7 Teams</p>
+            <div id="roundsVisualization" width="100%"></div>
+            <div class="data-visualization">
+                <div class="data-item"><span>Calm and Composed</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Multimedia Mayhem</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Dream 11</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Health Roulette</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Epidemic Express</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Buzzer Round</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+                <div class="data-item"><span>Rapid Fire Round</span>
+                    <div class="data-bar" style="width:14.28%"></div>
+                </div>
+            </div>
+            <h4>Elimination Rounds</h4>
+            <ol>
+                <li class="round-description"><strong>Calm and Composed (Cool & Calm):</strong> Tests participants'
+                    ability to stay calm under pressure and provide accurate answers to thought-provoking questions in
+                    community medicine.</li>
+                <li class="round-description"><strong>Multimedia Mayhem (A-V Round):</strong> Teams answer questions
+                    based on videos, audio clips, or images related to public health campaigns and issues.</li>
+                <li class="round-description"><strong>Dream 11:</strong> Teams bet points based on their confidence in
+                    answering public health risk-related questions correctly.</li>
+                <li class="round-description"><strong>Health Roulette (Take Your Chance):</strong> Teams spin a virtual
+                    wheel to determine the category of the public health question they need to answer.</li>
+            </ol>
+            <h4>Final Rounds</h4>
+            <ol start="5">
+                <li class="round-description"><strong>Epidemic Express (Bhaag Milkha Bhaag):</strong> Teams race against
+                    time to submit answers to a Google Form within a limited timeframe.</li>
+                <li class="round-description"><strong>Buzzer Round:</strong> A fast-paced round where teams buzz in to
+                    answer questions, testing quick thinking and reflexes.</li>
+                <li class="round-description"><strong>Rapid Fire Round:</strong> Teams answer a series of rapid-fire
+                    questions within a limited time, requiring quick thinking and a broad knowledge base.</li>
+            </ol>
+        </div>
+        <div class="section">
+            <h3>Participation and Audience</h3>
+            <div id="audienceVisualization"></div>
+            <div class="data-visualization">
+                <div class="data-item"><span>Undergraduate Students (157)</span>
+                    <div class="data-bar" style="width:71%"></div>
+                </div>
+                <div class="data-item"><span>Residents (44)</span>
+                    <div class="data-bar" style="width:20%"></div>
+                </div>
+                <div class="data-item"><span>Faculty Members (20)</span>
+                    <div class="data-bar" style="width:9%"></div>
+                </div>
+            </div>
+            <p>7 teams competed in the final Intra-State competition, representing top performers from 21 participating
+                colleges across Gujarat.</p>
+            <p>The event witnessed an overwhelming response, with a diverse audience including 157 undergraduate
+                students, 44 residents, and 20 faculty members, totaling 221 attendees.</p>
+        </div>
+
+        <div class="section">
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="img/IN BETWEEN.jpg" alt="Image 1" style="width: 100%;">
+                </div>
+                <div class="image-item">
+                    <img src="img/INBETWEEN.jpg" alt="Image 2" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Distinguished Guests and Judges</h3>
+            <ul>
+                <li>Dr. Pradeep Kumar (Professor, M K Shah Medical College)</li>
+                <li>Dr. Devang Raval (Professor and Head, B J Medical College, Ahmedabad)</li>
+                <li>Dr. A Bhagyalaxmi (Professor, B J Medical College, Ahmedabad)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Winning Teams</h3>
+            <ol>
+                <li><strong>Gold Medal:</strong> Team GMERS Gotri</li>
+                <li><strong>Silver Medal:</strong> Team BJMC</li>
+                <li><strong>Bronze Medal:</strong> Team GCS</li>
+            </ol>
+            <img src="img/CELEBRATION.jpg" alt="Image 2" style="width: 100%;">
+        </div>
+        <div class="section">
+            <h3>Event Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h4>Pre-event Phase</h4>
+                        <p>College-level rounds and online eliminations conducted</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h4>July 2, 2024</h4>
+                        <p>10:30 AM - 1:00 PM: 4 Elimination Rounds</p>
+                        <p>2:00 PM - 3:00 PM: 3 Final Rounds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Event Highlights</h3>
+            <ul>
+                <li>Interactive audience participation with chances to win small prizes</li>
+                <li>Live streaming on YouTube and Echo India platform for wider reach</li>
+                <li>Opening ceremony introducing B J Medical College Ahmedabad's community contributions</li>
+                <li>Cultural touch with a spiritual 'Dip Pragtya' ceremony</li>
+                <li>Focus on Public Health topics, aligning with the World Health Day theme</li>
+                <li>7 mentors from participating colleges accompanied the teams</li>
+                <li>Respective HODs from participating institutions were present</li>
+            </ul>
+        </div>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="img/END.jpg" alt="Image 1" style="width: 100%;">
+            </div>
+            <div class="image-item">
+                <img src="img/FELICITATION.jpg" alt="Image 2" style="width: 100%;">
+            </div>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="img/FELICITATION 1.jpg" alt="Image 1" style="width: 100%;">
+            </div>
+            <div class="image-item">
+                <img src="img/2.jpg" alt="Image 2" style="width: 100%;">
+            </div>
+        </div>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="img/3.jpg" alt="Image 1" style="width: 100%;">
+            </div>
+            <div class="image-item">
+                <img src="img/4.jpg" alt="Image 2" style="width: 100%;">
+            </div>
+        </div>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="img/5.jpg" alt="Image 1" style="width: 100%;">
+            </div>
+            <div class="image-item">
+                <img src="img/20240702_145356.jpg" alt="Image 2" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <script>
+        function createRoundsVisualization() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('roundsVisualization').appendChild(renderer.domElement);
+            const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+            const material = new THREE.MeshNormalMaterial();
+            const torusKnot = new THREE.Mesh(geometry, material);
+            scene.add(torusKnot);
+            camera.position.z = 30;
+            function animate() {
+                requestAnimationFrame(animate);
+                torusKnot.rotation.x += 0.01;
+                torusKnot.rotation.y += 0.01;
+                renderer.setSize(document.getElementById('roundsVisualization').offsetWidth, window.innerHeight);
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+        createRoundsVisualization();
+
+        function createAudienceVisualization() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('audienceVisualization').appendChild(renderer.domElement);
+            const geometry = new THREE.SphereGeometry(15, 32, 16);
+            const material = new THREE.MeshPhongMaterial({ color: 0xffffff, wireframe: true });
+            const sphere = new THREE.Mesh(geometry, material);
+            scene.add(sphere);
+            const light = new THREE.PointLight(0xffffff, 1, 100);
+            light.position.set(0, 0, 20);
+            scene.add(light);
+            camera.position.z = 30;
+            function animate() {
+                requestAnimationFrame(animate);
+                sphere.rotation.x += 0.01;
+                sphere.rotation.y += 0.01;
+                renderer.setSize(document.getElementById('roundsVisualization').offsetWidth, window.innerHeight);
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+        createAudienceVisualization();
+    </script>
+</body>
+
+</html>
